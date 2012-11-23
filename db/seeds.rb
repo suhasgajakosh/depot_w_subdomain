@@ -7,8 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Product.delete_all
 #....
-Product.create(:title=>'Architecture Diagram',
+Product.create(:title=>'Book of Ruby',
 	:description=>
-	 %{This is my arechitecture diagram.},
+	 %{Standard book for the beginner of ruby language. },
+	:image_url=>'/images/ruby.png',
+	:price=>30)
+Product.create(:title=>'Architecture',
+	:description=>
+	 %{My final Architecture. },
 	:image_url=>'/images/arc.png',
 	:price=>45)
+Product.create(:title=>'Rails',
+	:description=>
+	 %{New Rails Book. },
+	:image_url=>'/images/Rails.png',
+	:price=>50)
