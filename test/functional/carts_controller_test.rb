@@ -30,8 +30,8 @@ class CartsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @cart
-    assert_response :success
+    get :edit, id: @cart, cart: @cart.attributes
+    assert_redirected_to cart_path(assigns(:cart))
   end
 
   test "should update cart" do

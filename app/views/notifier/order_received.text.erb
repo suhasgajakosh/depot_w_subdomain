@@ -1,0 +1,11 @@
+Dear <%= @order.name%>
+
+Thank you for your recent order from The SaaS store.
+
+You ordered the following items:
+
+<%= render @order.line_items %>
+
+You will receive a seperate mail when your order ships.
+
+Thanks for buying items from store. Visit again.
