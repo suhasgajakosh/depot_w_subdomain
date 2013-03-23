@@ -3,7 +3,7 @@ require 'digest/sha2'
 class User < ActiveRecord::Base
 	validates :name, :presence => true, :uniqueness => true
 	
-	validates :password, :confirmation => true
+	validates :password, :confirmation => true 
 	attr_accessor :password_confirmation
 	attr_reader :password
 
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 	end
 
 	def User.encrypt_password(password, salt)
-		Digest::SHA.hexdigest(password + "wibble" + salt)		
+		Digest::SHA2.hexdigest(password + "wibble" + salt)		
 	end
 
 	

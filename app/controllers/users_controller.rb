@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.order(:name)
+    @users = User.order(params[:name])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @user }
+      format.xml { render json: @user }
     end
   end
 
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to(users_url, notice: "User #{@user.name} was successfully created.") }
-        format.json { render json: @user, status: :created, location: @user }
+        format.xml { render xml: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
