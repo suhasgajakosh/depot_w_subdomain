@@ -31,6 +31,8 @@ gem 'bcrypt-ruby'
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
+gem 'heroku'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
