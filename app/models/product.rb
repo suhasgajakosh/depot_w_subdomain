@@ -12,6 +12,8 @@ class Product < ActiveRecord::Base
 		:with => %r{\.(gif|jpg|png)$}i,
 		:message => 'must be a URL for GIF, JPG or PNG image'}
 
+	default_scope { where(tenant_id: Tenant.current_id) }
+
 	private
 
 	# ensure that there are no line items referencing this product

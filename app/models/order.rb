@@ -4,6 +4,8 @@ class Order < ActiveRecord::Base
 
 	validates :name, :address, :email, :paytype, :presence => true
 	validates :paytype, :inclusion => PAYMENT_TYPES
+
+	default_scope { where(tenant_id: Tenant.current_id) }
 	
 	def add_line_items_from_cart(cart)
 		cart.line_items.each do |item|
