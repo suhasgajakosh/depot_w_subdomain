@@ -34,7 +34,7 @@ gem 'jbuilder'
 
 gem 'heroku'
 
-gem 'git'
+gem 'git', '>= 1.13.0'
 
 gem 'devise'
 
